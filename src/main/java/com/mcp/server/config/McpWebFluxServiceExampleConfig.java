@@ -1,20 +1,20 @@
 package com.mcp.server.config;
 
-import org.springframework.ai.tool.ToolCallback;
 import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.mcp.server.service.DateTimeService;
+import com.mcp.server.service.OpenMeteoService;
 
 @Configuration
 public class McpWebFluxServiceExampleConfig {
 
     @Bean
-    public ToolCallbackProvider dateTimeTools(DateTimeService dateTimeService) {
-        return MethodToolCallbackProvider.builder().toolObjects(dateTimeService).build();
+    public ToolCallbackProvider dateTimeTools(DateTimeService dateTimeService, 
+    		OpenMeteoService openMeteoService) {
+        return MethodToolCallbackProvider.builder().toolObjects(dateTimeService, openMeteoService).build();
     }
     
 
