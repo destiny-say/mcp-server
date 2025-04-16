@@ -1,0 +1,16 @@
+server:
+  port: 9090
+
+spring:
+  ai:
+    mcp:
+      server:
+        enable: false
+#        stdio: true
+        name: my-datetime-server
+        version: 0.0.1
+        type: ASYNC
+        sse-message-endpoint: /mcp/message
+        
+  # main:
+  #   web-application-type: none
